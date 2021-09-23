@@ -1,4 +1,4 @@
-name: 'Qodana - PHP'
+name: 'Qodana - Python'
 description: 'Qodana is a code quality monitoring tool that identifies bugs, duplications, and imperfections.'
 author: 'JetBrains'
 
@@ -47,6 +47,13 @@ inputs:
   additional-env-variables:
     description: 'Pass additional environment variables to docker container'
     required: false
+outputs:
+  results-sarif-path:
+    description: 'Qodana results in the SARIF format.'
+    value: "${{ inputs.results-dir }}/report.sarif"
+  results-json-path:
+    description: 'Qodana results in the JSON format.'
+    value: "${{ inputs.results-dir }}/qodana.sarif.json"
   
 runs:
   using: 'composite'
@@ -54,6 +61,7 @@ runs:
     - run: "${GITHUB_ACTION_PATH}/run_qodana.sh"
       shell: bash
       env:
+        QODANA_IMAGE: "jetbrains/qodana-python:2021.2"
         PROJECT_DIR: "${{ inputs.project-dir }}"
         RESULTS_DIR: "${{ inputs.results-dir }}"
         CACHE_DIR: "${{ inputs.cache-dir }}"

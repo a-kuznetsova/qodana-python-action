@@ -1,7 +1,5 @@
 #!/bin/bash
 
-qodana_image='jetbrains/qodana:2021.2-eap' #todo: update image version
-
 add_prefix() {
     local input_str=$1
     local prefix=$2
@@ -31,11 +29,11 @@ docker run -u $UID -v "$PROJECT_DIR:/data/project" \
     $idea_config_dir \
     $additional_volumes \
     $additional_env_variables \
-    $qodana_image \
+    $QODANA_IMAGE \
     $(if [ -n "$INSPECTED_DIR" ]; then echo "-d $INSPECTED_DIR"; fi) \
     $(if [ -n "$BASELINE_PATH" ]; then echo "-b $BASELINE_PATH"; fi) \
     $(if [ "$BASELINE_INCLUDE_ABSENT" == "true" ]; then echo "--baseline-include-absent"; fi) \
     $(if [ -n "$FAIL_THRESHOLD" ]; then echo "--fail-threshold $FAIL_THRESHOLD"; fi) \
     $(if [ "$SAVE_HTML_REPORT" == "true" ]; then echo "--save-report"; fi) \
     $(if [ -n "$PROFILE_NAME" ]; then echo "-profileName $PROFILE_NAME"; fi) \
-    $(if [ -n "$PROFILE_PATH" ]; then echo "-profilePath $FAIL_THRESHOLD"; fi)
+    $(if [ -n "$PROFILE_PATH" ]; then echo "-profilePath $PROFILE_PATH"; fi)

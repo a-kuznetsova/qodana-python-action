@@ -1,4 +1,4 @@
-## Qodana Python
+# Qodana Python
 
 [![official project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
@@ -13,8 +13,9 @@ Qodana Python is based on PyCharm Professional and provides static analysis for 
 <!-- toc -->
 
 - [Qodana Python](#qodana-python)
-- [Usage](#usage)
-- [License Summary](#license-summary)
+  - [Usage](#usage)
+  - [Output Results](#output-results)
+  - [License Summary](#license-summary)
 
 <!-- tocstop -->
 
@@ -44,12 +45,10 @@ All action's inputs are optional.
   with:
       fail-threshold: 10
       additional-env-variables: |
-            IDE_PROPERTIES_PROPERTY='-Didea.headless.enable.statistics=false;-Didea.required.plugins.id=JavaScript,org.intellij.grails'
+            IDEA_PROPERTIES='/data/project/idea.properties'
 ```
 
-<!-- #TODO: update output results and License Summary -->
-
-<!-- ## Output Results
+## Output Results
 
 An example of the Qodana command-line summary output:
 ```
@@ -63,8 +62,6 @@ An example of the Qodana command-line summary output:
 
 ---- Problems reported: 3 ----
 ```
-
-Full Qodana results are available in the file `results-allProblems.json` located in the `results-dir` folder. -->
 
 ## License Summary
 
