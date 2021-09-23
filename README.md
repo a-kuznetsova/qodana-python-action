@@ -1,7 +1,5 @@
 # Qodana Python
 
-[![official project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-
 ![Qodana EAP version alert](resources/eap-alert.png)
 
 **Qodana** is a code quality monitoring platform that allows you to evaluate the integrity of code you own, contract, or purchase. It brings into your CI/CD pipelines all the smart features you love in the JetBrains IDEs plus continues adding project-level checks like clone detection and license audit.
@@ -36,12 +34,12 @@ Qodana Python is based on PyCharm Professional and provides static analysis for 
 * `additional-env-variables` - Additional environment variables to pass to qodana docker image
 
 ```yaml
-- uses: JetBrains/qodana-python-action@v1.1.1
+- uses: JetBrains/qodana-python-action@v1.1.1-eap
 ```
 
 All action's inputs are optional. 
 ```yaml
-- uses: JetBrains/qodana-python-action@v1.1.1
+- uses: JetBrains/qodana-python-action@v1.1.1-eap
   with:
       fail-threshold: 10
       additional-env-variables: |

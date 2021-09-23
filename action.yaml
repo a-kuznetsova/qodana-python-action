@@ -61,7 +61,7 @@ runs:
     - run: "${GITHUB_ACTION_PATH}/run_qodana.sh"
       shell: bash
       env:
-        QODANA_IMAGE: "jetbrains/qodana-python:2021.2"
+        QODANA_IMAGE: "jetbrains/qodana-python:2021.2-eap"
         PROJECT_DIR: "${{ inputs.project-dir }}"
         RESULTS_DIR: "${{ inputs.results-dir }}"
         CACHE_DIR: "${{ inputs.cache-dir }}"
